@@ -6,17 +6,17 @@ apply plugin: 'com.google.devtools.ksp'
 
 android {
     compileSdk 35
-    namespace "code.name.monkey.retromusic"
+    namespace "com.mp3.player.retromusic"
 
     defaultConfig {
-        minSdk 21
+        minSdk 24
         targetSdk 35
 
         vectorDrawables.useSupportLibrary = true
 
         applicationId namespace
-        versionCode 10621
-        versionName '6.2.1'
+        versionCode 1
+        versionName '1.0.0'
 
         buildConfigField("String", "GOOGLE_PLAY_LICENSING_KEY", "\"${getProperty(getProperties('../public.properties'), 'GOOGLE_PLAY_LICENSE_KEY')}\"")
     }
@@ -69,11 +69,11 @@ android {
         warning 'ImpliedQuantity', 'Instantiatable', 'MissingQuantity', 'MissingTranslation', 'StringFormatInvalid'
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_21
-        targetCompatibility JavaVersion.VERSION_21
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "21"
+        jvmTarget = "17"
     }
     dependenciesInfo {
         includeInApk = false
@@ -172,4 +172,7 @@ dependencies {
     implementation libs.fastscroll.library
     implementation libs.customactivityoncrash
     implementation libs.tankery.circularSeekBar
+
+    implementation libs.play.services.ads
+    implementation project(':nativetemplates')
 }

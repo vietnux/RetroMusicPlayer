@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package code.name.monkey.retromusic.cast
+package com.mp3.player.retromusic.cast
 
 import android.content.Context
 import com.google.android.gms.cast.CastMediaControlIntent.DEFAULT_MEDIA_RECEIVER_APPLICATION_ID

@@ -12,7 +12,7 @@
  * See the GNU General Public License for more details.
  */
 
-package code.name.monkey.retromusic.util
+package com.mp3.player.retromusic.util
 
 import android.app.Activity
 import android.content.SharedPreferences

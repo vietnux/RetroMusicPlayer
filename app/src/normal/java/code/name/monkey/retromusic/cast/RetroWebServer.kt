@@ -1,7 +1,7 @@
-package code.name.monkey.retromusic.cast
+package com.mp3.player.retromusic.cast
 
 import android.content.Context
-import code.name.monkey.retromusic.util.MusicUtil
+import com.mp3.player.retromusic.util.MusicUtil
 import fi.iki.elonen.NanoHTTPD
 import fi.iki.elonen.NanoHTTPD.Response.Status
 import java.io.*

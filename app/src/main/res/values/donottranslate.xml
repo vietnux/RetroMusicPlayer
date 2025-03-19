@@ -11,7 +11,7 @@
         <item>code_name_monkey_donate_8</item>
     </string-array>
 
-    <string name="app_name" translatable="false">Retro Music</string>
+    <string name="app_name" translatable="false">Music Amplifier</string>
     <string name="git_hub" translatable="false">GitHub</string>
 
     <string name="app_shortcut_last_added_long" translatable="false">@string/last_added</string>
@@ -28,4 +28,17 @@
     <string name="app_widget_circle_name">@string/circle</string>
 
     <string name="download_policy">always</string>
+
+    <string name="app_summary" translatable="false">Music Amplifier - Music Player is a powerful offline music player designed to enhance your audio experience. With an intuitive interface and advanced sound customization features, this app allows you to enjoy your favorite songs without an internet connection.</string>
+    <string name="app_description" translatable="false">Music Amplifier - Music Player is a powerful offline music player designed to enhance your audio experience. With an intuitive interface and advanced sound customization features, this app allows you to enjoy your favorite songs without an internet connection.\n
+
+        Key features include:\n
+        🎵 High-Quality Audio Playback – Enjoy crystal-clear sound with support for various audio formats.\n
+        🎚️ Built-in Equalizer and Bass Booster – Customize your sound with multiple presets or fine-tune it to your preference.\n
+        📂 Smart Music Library – Easily manage your songs, albums, and playlists.\n
+        🎧 Offline Mode – Listen to your music anytime, anywhere, without needing Wi-Fi.\n
+        🎨 Customizable UI – Personalize the app’s theme to match your style.\n
+
+        Experience the ultimate offline music player with Music Amplifier - Music Player and elevate your listening journey!🎶\n
+    </string>
 </resources>

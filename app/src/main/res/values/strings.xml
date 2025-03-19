@@ -245,7 +245,7 @@
     <string name="loading_products">Loading products…</string>
     <string name="login">Login</string>
     <string name="lyrics">Lyrics</string>
-    <string name="made_with_love">Made with ❤️ in India</string>
+    <string name="made_with_love" translatable="false">Made by ❤️ thegioilaptrinh.net</string>
     <string name="material">Material</string>
     <string name="md3" translatable="false">MD3</string>
     <string name="md_error_label">Error</string>
@@ -571,4 +571,6 @@
     <string name="your_account_data_is_only_used_for_authentication">Your account data is only used for authentication.</string>
     <string name="could_not_write_tags_to_file">Could not write tags to the music file!</string>
     <string name="sleep_timer_no_permission">No permission to schedule alarms, please allow Retro Music.</string>
+
+
 </resources>

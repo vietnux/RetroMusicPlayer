@@ -1,10 +1,10 @@
-package code.name.monkey.retromusic.billing
+package com.mp3.player.retromusic.billing
 
 import android.content.Context
-import code.name.monkey.retromusic.BuildConfig
-import code.name.monkey.retromusic.Constants
-import code.name.monkey.retromusic.R
-import code.name.monkey.retromusic.extensions.showToast
+import com.mp3.player.retromusic.BuildConfig
+import com.mp3.player.retromusic.Constants
+import com.mp3.player.retromusic.R
+import com.mp3.player.retromusic.extensions.showToast
 import com.anjlab.android.iab.v3.BillingProcessor
 import com.anjlab.android.iab.v3.PurchaseInfo
 

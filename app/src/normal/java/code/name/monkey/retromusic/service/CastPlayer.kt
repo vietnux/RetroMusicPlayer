@@ -1,9 +1,9 @@
-package code.name.monkey.retromusic.service
+package com.mp3.player.retromusic.service
 
-import code.name.monkey.retromusic.cast.CastHelper.toMediaInfo
-import code.name.monkey.retromusic.model.Song
-import code.name.monkey.retromusic.service.playback.Playback
-import code.name.monkey.retromusic.util.PreferenceUtil.playbackSpeed
+import com.mp3.player.retromusic.cast.CastHelper.toMediaInfo
+import com.mp3.player.retromusic.model.Song
+import com.mp3.player.retromusic.service.playback.Playback
+import com.mp3.player.retromusic.util.PreferenceUtil.playbackSpeed
 import com.google.android.gms.cast.MediaLoadOptions
 import com.google.android.gms.cast.MediaSeekOptions
 import com.google.android.gms.cast.MediaStatus

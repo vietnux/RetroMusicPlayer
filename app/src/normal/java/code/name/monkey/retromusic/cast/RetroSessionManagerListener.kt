@@ -1,4 +1,4 @@
-package code.name.monkey.retromusic.cast
+package com.mp3.player.retromusic.cast
 
 import com.google.android.gms.cast.framework.CastSession
 import com.google.android.gms.cast.framework.SessionManagerListener
