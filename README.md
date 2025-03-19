@@ -1,7 +1,7 @@
 <p align="center">
   <a href="https://retromusic.app">
-    <img src="app\src\main\ic_launcher-web.png" height="128">
-    <h1 align="center">Retro Music Player 🎵</h1>
+    <img src="app\src\main\ic_launcher.png" height="128">
+    <h1 align="center">Music Amplifier - Music Player 🎵</h1>
   </a>
 </p>
 <p align="center">
