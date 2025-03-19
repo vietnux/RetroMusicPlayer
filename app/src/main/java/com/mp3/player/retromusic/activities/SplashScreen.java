@@ -9,10 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.mp3.player.retromusic.BuildConfig;
 import com.mp3.player.retromusic.R;
 import com.mp3.player.retromusic.ads.AdmobLib;
-import com.mp3.player.retromusic.ads.LoadingDialog;
 import com.mp3.player.retromusic.util.JsonParams;
 import com.mp3.player.retromusic.util.RemoteJSONSource;
-//import com.mp3.player.retromusic.util.UtilsUI;
 
 //Yeah, I know this is weird code.
 public class SplashScreen extends AppCompatActivity {

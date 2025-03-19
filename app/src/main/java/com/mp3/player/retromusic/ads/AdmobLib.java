@@ -3,7 +3,6 @@ package com.mp3.player.retromusic.ads;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Application;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -37,7 +36,6 @@ import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.nativead.NativeAd;
 import com.google.android.gms.ads.nativead.NativeAdOptions;
-import com.mp3.player.retromusic.util.RemoteJSONSource;
 
 import java.util.Arrays;
 import java.util.List;
