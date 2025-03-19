@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://retromusic.app">
+  <a href="https://thegioilaptrinh.net">
     <img src="app\src\main\res\drawable\ic_splash.png" height="128">
     <h1 align="center">Music Amplifier - Music Player 🎵</h1>
   </a>
