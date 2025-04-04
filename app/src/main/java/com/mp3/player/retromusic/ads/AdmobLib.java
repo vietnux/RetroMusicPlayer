@@ -461,7 +461,8 @@ public class AdmobLib implements Application.ActivityLifecycleCallbacks {
 //        String AD_UNIT_ID = "ca-app-pub-1656614863517753/2103865415";
         String AD_UNIT_ID = JsonParams.getParam("admobid.android.openapp");
 
-        AppOpenAd.load( activity, AD_UNIT_ID, adRequest,
+        if (AD_UNIT_ID != null)
+            AppOpenAd.load( activity, AD_UNIT_ID, adRequest,
 //                AppOpenAd.APP_OPEN_AD_ORIENTATION_PORTRAIT,
                 loadCallback);
     }

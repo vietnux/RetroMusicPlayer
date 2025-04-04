@@ -49,8 +49,11 @@ import com.mp3.player.retromusic.util.logD
 import com.mp3.player.retromusic.util.logE
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import org.jaudiotagger.audio.AudioFile
 import org.jaudiotagger.audio.AudioFileIO
 import org.jaudiotagger.tag.FieldKey
@@ -358,31 +361,77 @@ abstract class AbsTagEditorActivity<VB : ViewBinding> : AbsBaseActivity() {
     ) {
         hideSoftKeyboard()
 
-        hideFab()
-        logD(fieldKeyValueMap)
-        GlobalScope.launch {
-            if (VersionUtils.hasR()) {
-                cacheFiles = TagWriter.writeTagsToFilesR(
-                    this@AbsTagEditorActivity, AudioTagInfo(
-                        songPaths,
-                        fieldKeyValueMap,
-                        artworkInfo
-                    )
-                )
+//        val cacheFiles: MutableList<File> = mutableListOf()
 
-                if (cacheFiles.isNotEmpty()) {
-                    val pendingIntent =
-                        MediaStore.createWriteRequest(contentResolver, getSongUris())
-                    launcher.launch(IntentSenderRequest.Builder(pendingIntent).build())
-                }
-            } else {
-                TagWriter.writeTagsToFiles(
-                    this@AbsTagEditorActivity, AudioTagInfo(
-                        songPaths,
-                        fieldKeyValueMap,
-                        artworkInfo
+        lifecycleScope.launch(Dispatchers.Main) { // Chạy trên main thread
+            hideFab() // Ẩn FAB trên UI thread
+        }
+        logD(fieldKeyValueMap)
+//        GlobalScope.launch {
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+//                val audioTagInfo = AudioTagInfo(songPaths, fieldKeyValueMap, artworkInfo)
+                if (VersionUtils.hasR()) {
+//                    val chunkSize = 5 // Xử lý 5 file một lúc để giảm tải
+//                    val chunkedSongs = songPaths?.chunked(chunkSize)
+//                    val allUris = mutableListOf<Uri>() // ✅ Gom tất cả URI vào đây
+//
+//                    if (chunkedSongs != null) {
+//                        for (chunk in chunkedSongs) {
+//                            val audioTagInfoChunk = AudioTagInfo(
+//                                chunk,
+//                                fieldKeyValueMap = fieldKeyValueMap,
+//                                artworkInfo = artworkInfo
+//                            )
+//
+//                            val cacheFilesChunk = TagWriter.writeTagsToFilesR(
+//                                this@AbsTagEditorActivity, audioTagInfoChunk
+//                            )
+//
+//                            if (cacheFilesChunk.isNotEmpty()) {
+//                                cacheFiles.addAll(cacheFilesChunk)
+//                                allUris.addAll(getSongUris()) // ✅ Gom URI thay vì gọi intent mỗi lần
+//                            }
+//
+//                            delay(500) // Giảm tải CPU
+//                        }
+//                    }
+//
+//                    // ✅ Chỉ hiển thị 1 lần khi tất cả file đã xử lý xong
+//                    if (allUris.isNotEmpty()) {
+//                        val pendingIntent = MediaStore.createWriteRequest(contentResolver, allUris)
+//
+//                        withContext(Dispatchers.Main) {
+//                            launcher.launch(IntentSenderRequest.Builder(pendingIntent).build())
+//                        }
+//                    }
+
+                    cacheFiles = TagWriter.writeTagsToFilesR(
+                        this@AbsTagEditorActivity, AudioTagInfo(
+                            songPaths,
+                            fieldKeyValueMap,
+                            artworkInfo
+                        )
                     )
-                )
+
+                    if (cacheFiles.isNotEmpty()) {
+                        val pendingIntent =
+                            MediaStore.createWriteRequest(contentResolver, getSongUris())
+                        withContext(Dispatchers.Main) {
+                            launcher.launch(IntentSenderRequest.Builder(pendingIntent).build())
+                        }
+                    }
+                } else {
+                    TagWriter.writeTagsToFiles(
+                        this@AbsTagEditorActivity, AudioTagInfo(
+                            songPaths,
+                            fieldKeyValueMap,
+                            artworkInfo
+                        )
+                    )
+                }
+            } catch (e: Exception) {
+                logE("Error writing tags: ${e.message}")
             }
         }
     }
