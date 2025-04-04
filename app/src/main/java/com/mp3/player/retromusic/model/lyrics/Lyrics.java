@@ -31,15 +31,23 @@ public class Lyrics {
   protected boolean parsed = false;
   protected boolean valid = false;
 
+  /**
+   * @param data = string:
+   *             [00:00.00] I'm so glad you made time to see me
+   *            [00:05.00] How's life? Tell me, how's your family?
+   *            [00:10.00] I haven't seen them in a while
+   *             ...
+   * @return
+   */
   public static boolean isSynchronized(String data) {
     for (Class<? extends Lyrics> format : Lyrics.FORMATS) {
       try {
-        Lyrics lyrics = format.newInstance().setData(null, data);
+        Lyrics lyrics = format.newInstance().setData(null, data);// truyền dữ liệu vào lớp định dạng
         if (lyrics.isValid()) {
-          return true;
+          return true;// nếu hợp lệ, trả về true ngay
         }
       } catch (Exception e) {
-        e.printStackTrace();
+        e.printStackTrace();// in lỗi nếu có
       }
     }
     return false;
